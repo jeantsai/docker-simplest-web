@@ -1,0 +1,19 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "10"
+
+services:
+  - docker
+
+before_install:
+  - docker build --build-arg demo_version=1.0 -t jeantsai/simple-demo-microservice:1.0 ./docker
+  - docker build --build-arg demo_version=2.0 -t jeantsai/simple-demo-microservice:2.0 ./docker
+  - docker build --build-arg demo_version=3.0 -t jeantsai/simple-demo-microservice:3.0 ./docker
+
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master

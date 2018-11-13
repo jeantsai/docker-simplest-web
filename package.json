@@ -1,0 +1,11 @@
+{
+  "name": "docker-simple-demo-microservice",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/jeantsai/docker-simplest-web.git",
+  "author": "jeantsai@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
