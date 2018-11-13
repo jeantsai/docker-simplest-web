@@ -2,8 +2,8 @@ FROM node:10-alpine
 
 ARG demo_version=1.0
 ARG port=3000
-ENV SDM_DEMO_VERSION=$demo_version
-ENV SDM_PORT=$port
+ENV SM_DEMO_VERSION=$demo_version
+ENV SM_PORT=$port
 
 ADD package.json /tmp/package.json
 RUN cd /tmp && yarn install

@@ -7,8 +7,8 @@ const os = require('os')
  * A simplest web server for demo in container world
  */
 
-const demoVersion = process.env.SDM_DEMO_VERSION || 'default'
-const port = process.env.SDM_PORT || 3000
+const demoVersion = process.env.SM_DEMO_VERSION || 'default'
+const port = process.env.SM_PORT || 3000
 
 const prompt = `Demo μService - Ver:${demoVersion} on ${os.hostname}`
 
