@@ -7,7 +7,7 @@ node_js:
 services:
   - docker
 
-before_install:
+script:
   - docker build --build-arg demo_version=1.0 -t jeantsai/simple-demo-microservice:1.0 .
   - docker build --build-arg demo_version=2.0 -t jeantsai/simple-demo-microservice:2.0 .
   - docker build --build-arg demo_version=3.0 -t jeantsai/simple-demo-microservice:3.0 .
