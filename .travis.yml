@@ -8,12 +8,12 @@ services:
   - docker
 
 script:
-  - docker build --build-arg demo_version=1.0 -t jeantsai/simple-demo-microservice:1.0 .
-  - docker build --build-arg demo_version=2.0 -t jeantsai/simple-demo-microservice:2.0 .
-  - docker build --build-arg demo_version=3.0 -t jeantsai/simple-demo-microservice:3.0 .
+  - docker build --build-arg demo_version=1.0 -t jeantsai/simplest-microservice:1.0 .
+  - docker build --build-arg demo_version=2.0 -t jeantsai/simplest-microservice:2.0 .
+  - docker build --build-arg demo_version=3.0 -t jeantsai/simplest-microservice:3.0 .
 
 deploy:
   provider: script
-  script: bash docker_push.sh
+  script: bash ./push-docker-images.sh
   on:
     branch: master
