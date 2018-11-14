@@ -22,4 +22,4 @@ var handler = function (req, rsp) {
 }
 
 console.log(prompt + " is listening on " + port + " ...")
-http.createServer( handler ).listen( port )
+http.createServer( handler ).listen( port, '0.0.0.0' )
