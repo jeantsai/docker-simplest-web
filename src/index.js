@@ -18,7 +18,12 @@ var handler = function (req, rsp) {
     console.log("Received request from " + req.connection.remoteAddress)
     rsp.setHeader('Content-Type', 'text/plain; charset=utf-8')
     rsp.writeHead(200)
-    rsp.end(prompt + " received request from " + req.connection.remoteAddress + "\n")
+    rsp.end(prompt + 
+        "\nRemote Address: " + req.connection.remoteAddress + 
+        "\nX-Forwarded-Host: " + req.headers['x-forwarded-host'] +
+        "\nX-Forwarded-For: " + req.headers['x-forwarded-for'] +
+        "\nX-Real-IP: " + req.headers['x-real-ip']
+    )
 }
 
 console.log(prompt + " is listening on " + port + " ...")
