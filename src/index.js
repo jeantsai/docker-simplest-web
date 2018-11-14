@@ -10,7 +10,7 @@ const os = require('os')
 const demoVersion = process.env.SM_DEMO_VERSION || 'default'
 const port = process.env.SM_PORT || 3000
 
-const prompt = `Demo μService - Ver:${demoVersion} on ${os.hostname}`
+const prompt = "Demo μService"
 
 var count = 0
 
@@ -18,7 +18,9 @@ var handler = function (req, rsp) {
     console.log("Received request from " + req.connection.remoteAddress)
     rsp.setHeader('Content-Type', 'text/plain; charset=utf-8')
     rsp.writeHead(200)
-    rsp.end(prompt + 
+    rsp.end(prompt + "\n===============================" +
+        "\nVersion: " + demoVersion +
+        "\nLocal Host: " +  os.hostname +
         "\nRemote Address: " + req.connection.remoteAddress + 
         "\nX-Forwarded-Host: " + req.headers['x-forwarded-host'] +
         "\nX-Forwarded-For: " + req.headers['x-forwarded-for'] +
