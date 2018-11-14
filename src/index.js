@@ -16,6 +16,7 @@ var count = 0
 
 var handler = function (req, rsp) {
     console.log("Received request from " + req.connection.remoteAddress)
+    rsp.setHeader('Content-Type', 'text/plain; charset=utf-8')
     rsp.writeHead(200)
     rsp.end(prompt + " received request from " + req.connection.remoteAddress + "\n")
 }
