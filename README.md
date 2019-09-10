@@ -2,7 +2,7 @@
 
 A simplest microservice for demo purpose.
 
-Currently, HTTP is used to demo the exposing of the service.
+Currently, HTTP is used to demo the exposure of the service.
 
 ## Environment Variables
 
@@ -10,6 +10,6 @@ Currently, HTTP is used to demo the exposing of the service.
 
 The version number returned from the web server, used in demo which involve different versions of a service.
 
-### SM_PROT
+### SM_PORT
 
 The port which the demo microservice will listen on.
